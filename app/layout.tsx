@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono, Outfit } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { ToastProvider } from "@/components/ui/toast-provider"
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -33,7 +35,11 @@ export default function RootLayout({
     <html lang="en" className={cn("font-sans", outfit.variable)}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <TooltipProvider>
-          <ToastProvider>{children}</ToastProvider>
+          <ToastProvider>
+            {children}
+            <Analytics />
+            <SpeedInsights />
+          </ToastProvider>
         </TooltipProvider>
       </body>
     </html>
