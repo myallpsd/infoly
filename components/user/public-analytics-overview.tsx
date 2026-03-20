@@ -50,12 +50,19 @@ export function PublicAnalyticsOverview({ username }: PublicAnalyticsOverviewPro
   const [data, setData] = useState<PublicProfileAnalyticsResponse["analytics"] | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [origin, setOrigin] = useState(
+    (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, "")
+  )
   const normalizedUsername = username.trim()
   const hasPublicProfileUrl = normalizedUsername.length > 0
   const publicProfilePath = hasPublicProfileUrl ? `/wiki/${encodeURIComponent(normalizedUsername)}` : ""
-  const publicProfileUrlPreview = hasPublicProfileUrl
-    ? `http://localhost:3000/wiki/${normalizedUsername}`
-    : "--"
+  const publicProfileUrlPreview = hasPublicProfileUrl ? `${origin}${publicProfilePath}` : "--"
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setOrigin(window.location.origin)
+    }
+  }, [])
 
   useEffect(() => {
     const load = async () => {
