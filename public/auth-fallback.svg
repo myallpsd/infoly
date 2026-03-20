@@ -1,0 +1,26 @@
+<svg width="1200" height="1600" viewBox="0 0 1200 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="1" stop-color="#374151"/>
+    </linearGradient>
+    <linearGradient id="orb1" x1="220" y1="220" x2="640" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="orb2" x1="740" y1="760" x2="1150" y2="1220" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F59E0B" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+  <circle cx="380" cy="360" r="320" fill="url(#orb1)"/>
+  <circle cx="920" cy="980" r="360" fill="url(#orb2)"/>
+
+  <g opacity="0.9">
+    <rect x="180" y="1280" width="840" height="2" fill="#E5E7EB" fill-opacity="0.4"/>
+    <text x="180" y="1250" fill="#F9FAFB" font-size="52" font-family="Arial, sans-serif">Infoly Secure Access</text>
+    <text x="180" y="1340" fill="#D1D5DB" font-size="30" font-family="Arial, sans-serif">Fallback image loaded</text>
+  </g>
+</svg>
